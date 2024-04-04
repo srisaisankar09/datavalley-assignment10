@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            margin-right: 10px;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Customer Information Form</h2>
+    <form action="/submit_customer_info" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Contact Phone No:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+
+        <label for="preferred_days">Preferred Days of Purchasing:</label>
+        <input type="text" id="preferred_days" name="preferred_days" placeholder="e.g. Weekends">
+
+        <label for="favorite_item">Favorite Item:</label>
+        <select id="favorite_item" name="favorite_item">
+            <option value="clothing">Clothing</option>
+            <option value="electronics">Electronics</option>
+            <option value="groceries">Groceries</option>
+            <option value="home_decor">Home Decor</option>
+            <option value="toys">Toys</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="suggestions">Suggestions:</label>
+        <textarea id="suggestions" name="suggestions" placeholder="Your suggestions are valuable to us."></textarea>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
